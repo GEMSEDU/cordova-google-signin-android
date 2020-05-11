@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-google-signin" version="0.0.1">
+    <name>CDGSN</name>
+    <description>Cordova Google Signin Plugin</description>
+    <js-module src="www/google-signin.js" name="GoogleSignin">
+        <clobbers target="GoogleSignin" />
+    </js-module>
+    <platform name="android">
+	    
+	    <preference name="PLAY_SERVICES_VERSION" default="15.0.1"/>
+    <framework src="com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION" />
+    <framework src="com.google.android.gms:play-services-identity:$PLAY_SERVICES_VERSION" />
+
+	    
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="GoogleSignin">
+                <param name="android-package" value="com.plugins.GoogleSignin" />
+                <param name="onload" value="true" />
+            </feature>
+            <access origin="https://accounts.google.com/*" />
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+        </config-file>	
+
+        <source-file src="src/android/GoogleSignin.java" target-dir="src/com/plugins"/>
+    </platform>
+  
+</plugin>
