@@ -1,0 +1,25 @@
+{
+  "name": "cordova-google-signin-android",
+  "version": "1.0",
+  "description": "Cordova plugin for Google Signin",
+  "author": {
+    "name": "GEMS Admin"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GEMSEDU/cordova-google-signin-android"
+  },
+  "cordova": {
+    "id": "cordova-google-signin-android",
+    "platforms": [
+      "android"    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "google",
+    "login",
+    "signin"
+  ]
+}
